@@ -141,3 +141,12 @@ This project is structured to ensure clean code separation and modularity:
 - **src/tests**: Contains all the test files for components.
 - **src/index.tsx**: Entry point for the application.
 - **src/App.tsx**: Main component to render the layout.
+
+## WebView
+<img width="1442" alt="Screenshot 2024-11-01 at 5 39 43 PM" src="https://github.com/user-attachments/assets/f9810795-7b62-4399-b351-8503590ea4bc">
+
+## MobileView
+<img width="354" alt="Screenshot 2024-11-01 at 5 40 50 PM" src="https://github.com/user-attachments/assets/ec6fd797-5c70-4d4e-9a4b-9a2024f2a09f">
+<img width="355" alt="Screenshot 2024-11-01 at 5 41 01 PM" src="https://github.com/user-attachments/assets/b3660462-a616-403d-9d84-88f3d27772b8">
+
+
