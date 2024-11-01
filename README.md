@@ -1,46 +1,161 @@
-# Getting Started with Create React App
+```markdown
+# PokeReact
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PokeReact is a React application built with TypeScript, Redux Toolkit, and RTK Query to fetch and display a list of Pokemon from the PokeAPI. Users can click on a Pokemon to view detailed information. This project follows best practices for modularity, scalability, and maintainability.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Environment Variables](#environment-variables)
+- [Testing](#testing)
+- [API References](#api-references)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React**: 18.x
+- **TypeScript**: 4.x
+- **Redux Toolkit**: 1.8.x
+- **RTK Query**: Integrated with Redux Toolkit for data fetching and caching
+- **Redux Persist**: 6.x for persisting the selected Pokemon data
+- **Axios**: 0.21.x for HTTP requests
+- **Jest**: 27.x and **React Testing Library**: 12.x for unit and integration testing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+├── src
+│   ├── app
+│   │   └── store.ts                    # Redux store configuration
+│   ├── components
+│   │   ├── pokemonList
+│   │   │   ├── PokemonList.tsx         # Pokemon list component
+│   │   │   └── style.css               # Pokemon list styles
+│   │   └── pokemonDetail
+│   │       ├── PokemonDetail.tsx       # Pokemon detail component
+│   │       └── style.css               # Pokemon detail styles
+│   ├── features
+│   │   └── pokemon
+│   │       ├── pokemonApi.ts           # RTK Query API slice
+│   │       ├── pokemonSlice.ts         # Redux slice
+│   │       └── types.ts                # Type definitions for Pokemon data
+│   ├── tests
+│   │   ├── PokemonList.test.tsx        # Unit test for PokemonList component
+│   │   └── PokemonDetail.test.tsx      # Unit test for PokemonDetail component
+│   ├── App.tsx                         # Main App component
+│   ├── index.tsx                       # Application entry point
+│   └── App.css                         # Basic styling for UI layout
+└── ...
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Display a list of Pokemon with their names and images.
+- Click on a Pokemon to view details (name, height, weight, types).
+- Persistent state using `redux-persist` to retain the selected Pokemon even after refreshing the page.
+- Error and loading handling for API requests.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ensure you have the following installed:
 
-### `npm run eject`
+- **Node.js** (>= 14.x)
+- **npm** or **yarn**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ```bash
+   git clone https://github.com/MianAfzaalZahoor99/poke-react.git
+   cd poke-react
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Install dependencies:
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Running the Application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To start the application locally, use:
+
+```bash
+npm start
+```
+
+This command will start the app in development mode on `http://localhost:3000`.
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following environment variable:
+
+```plaintext
+REACT_APP_API_BASE_URL=https://pokeapi.co/api/v2
+```
+
+This will allow you to configure the base URL of the API easily.
+
+## Testing
+
+This project uses **Jest** and **React Testing Library** for unit testing. To run tests, use:
+
+```bash
+npm test
+```
+
+The test coverage is designed to meet at least 60%, covering both components (`PokemonList` and `PokemonDetail`) with scenarios for loading, error handling, and basic rendering.
+
+### Test Files
+
+- `PokemonList.test.tsx`: Tests the `PokemonList` component for loading state, error state, and rendering of Pokemon items.
+- `PokemonDetail.test.tsx`: Tests the `PokemonDetail` component to display selected Pokemon details and handles loading and error states.
+
+## API References
+
+This project uses the [PokeAPI](https://pokeapi.co/) to fetch data:
+
+- **GET /pokemon?limit=10**: Fetches a list of Pokemon.
+- **GET /pokemon/{name}**: Fetches details for a specific Pokemon.
+
+Example API endpoints:
+
+- List of Pokemon: `https://pokeapi.co/api/v2/pokemon?limit=10`
+- Pokemon Details: `https://pokeapi.co/api/v2/pokemon/charizard`
+
+## Folder Structure
+
+This project is structured to ensure clean code separation and modularity:
+
+- **src/app**: Contains the Redux store configuration.
+- **src/components**: Holds React components, including `PokemonList` and `PokemonDetail`.
+- **src/features/pokemon**: Contains Redux slices, RTK Query API, and types specific to the Pokemon feature.
+- **src/tests**: Contains all the test files for components.
+- **src/index.tsx**: Entry point for the application.
+- **src/App.tsx**: Main component to render the layout.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`feature/your-feature-name`).
+3. Commit your changes with clear messages.
+4. Push to the branch.
+5. Create a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+```
