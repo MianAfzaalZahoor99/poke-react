@@ -1,6 +1,3 @@
-```markdown
-# PokeReact
-
 PokeReact is a React application built with TypeScript, Redux Toolkit, and RTK Query to fetch and display a list of Pokemon from the PokeAPI. Users can click on a Pokemon to view detailed information. This project follows best practices for modularity, scalability, and maintainability.
 
 ## Table of Contents
@@ -144,18 +141,3 @@ This project is structured to ensure clean code separation and modularity:
 - **src/tests**: Contains all the test files for components.
 - **src/index.tsx**: Entry point for the application.
 - **src/App.tsx**: Main component to render the layout.
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`feature/your-feature-name`).
-3. Commit your changes with clear messages.
-4. Push to the branch.
-5. Create a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-```
