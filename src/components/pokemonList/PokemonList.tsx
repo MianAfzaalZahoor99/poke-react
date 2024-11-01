@@ -16,12 +16,13 @@ const PokemonList: React.FC = () => {
   if (error) return <p>Error loading Pokemon list.</p>;
 
   return (
-    <div className="pokemon-list">
+    <div className="pokemon-list-container">
       <h2 className="main-title">PokeReact</h2>
-      <ul>
+      <ul className="pokemon-list">
         {data?.results.map((pokemon: any) => (
           <li
             key={pokemon.name}
+            className="pokemon-detail"
             onClick={() => dispatch(selectPokemon(pokemon))}
           >
             <img

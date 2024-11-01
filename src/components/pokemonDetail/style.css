@@ -1,4 +1,4 @@
-.pokemon-image-wrapper {
+.pokemon-image-container {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -12,28 +12,32 @@
   object-fit: contain;
 }
 
-.main-title {
+.title {
   background-color: #2979ff;
   color: #ffffff;
   padding: 16px 0;
   font-size: 1.5rem;
+  text-align: center;
 }
 
-.details p {
+.pokemon-details {
+  padding: 20px;
+}
+
+.detail-row {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   margin: 8px 0;
-  padding: 8px;
+  padding: 8px 0;
   border-top: 1px solid lightgray;
 }
 
-.details strong {
-  text-align: start;
-  display: inline-block;
-  width: 50%;
+.detail-label {
   font-weight: bold;
+  width: 50%;
+  text-align: start;
 }
+
 .flex-row {
   display: flex;
   flex-direction: row;

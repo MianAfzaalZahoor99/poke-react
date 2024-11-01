@@ -19,34 +19,34 @@ const PokemonDetail: React.FC = () => {
 
   return (
     <div className="pokemon-details">
-      {selectedPokemon ? (
+      <h2 className="title">
+        {data?.name ?? "Select a Pokémon to see details."}
+      </h2>
+      {selectedPokemon && (
         <>
-          <h2 className="main-title">{data?.name}</h2>
-          <div className="pokemon-image-wrapper">
+          <div className="pokemon-image-container">
             <img
               className="pokemon-image"
               src={data?.sprites.front_default}
               alt={data?.name}
             />
           </div>
-          <div className="details">
-            <p>
-              <strong>Name:</strong> {data?.name}
-            </p>
-            <p>
-              <strong>Height:</strong> {data?.height} cm
-            </p>
-            <p>
-              <strong>Weight:</strong> {data?.weight} kg
-            </p>
-            <p>
-              <strong>Types:</strong>
+          <div className="pokemon-details-content">
+            <div className="detail-row">
+              <span className="detail-label">Name:</span> {data?.name}
+            </div>
+            <div className="detail-row">
+              <span className="detail-label">Height:</span> {data?.height} cm
+            </div>
+            <div className="detail-row">
+              <span className="detail-label">Weight:</span> {data?.weight} kg
+            </div>
+            <div className="detail-row">
+              <span className="detail-label">Types:</span>
               {data?.types?.map(({ type }) => type.name).join(", ")}
-            </p>
+            </div>
           </div>
         </>
-      ) : (
-        <p>Select a Pokemon to see details.</p>
       )}
     </div>
   );

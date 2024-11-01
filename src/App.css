@@ -5,13 +5,11 @@
   gap: 20px;
 }
 
-.pokemon-list,
+.pokemon-list-container,
 .pokemon-details {
   width: 40%;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  border-bottom: 1px solid lightgray;
 }
 
 h2 {
@@ -26,7 +24,7 @@ h2 {
     margin-top: 10px;
   }
 
-  .pokemon-list,
+  .pokemon-list-container,
   .pokemon-details {
     width: 80%;
     margin-bottom: 20px;
@@ -34,7 +32,7 @@ h2 {
 }
 
 @media (max-width: 480px) {
-  .pokemon-list,
+  .pokemon-list-container,
   .pokemon-details {
     width: 90%;
     padding: 15px;
